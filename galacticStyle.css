@@ -75,8 +75,8 @@ small {
     #header #menu:hover {
       background: #2196f3;
       color: white;
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg); }
+      -webkit-transform: rotate(405deg);
+      transform: rotate(405deg); }
     #header #menu i {
       line-height: 2.2; }
   #header #altMenu {
@@ -86,7 +86,8 @@ small {
     width: 35px;
     height: 35px;
     padding-right: 12px;
-    top: -1px; }
+    top: -2px;
+    position: relative; }
     #header #altMenu:hover {
       padding-right: 24px;
       cursor: pointer; }
@@ -94,7 +95,7 @@ small {
     transition: all 0.3s ease;
     font-size: 0.8em;
     padding-right: 12px;
-    top: -10px;
+    top: -12px;
     position: relative; }
     #header #backMenu:hover {
       padding-right: 24px;

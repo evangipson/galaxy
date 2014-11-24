@@ -37,7 +37,7 @@ $(function(){
 					$('#header').stop().animate({
 						height:'100px'
 					},0);
-					$( "#title" ).replaceWith( "<h2 id='title'><div id='altMenu'><i class='fa fa-chevron-right'></i></div> GALAXY</h2>" );
+					$( "#title" ).replaceWith( "<h2 id='title'><div id='altMenu'><i class='fa fa-angle-right'></i></div> GALAXY</h2>" );
 					$('#header').find('h2').stop().animate({
 						fontSize: '1.5em',
 						paddingTop: '30px'
@@ -74,7 +74,7 @@ $(function(){
 		// replace the h2 tag!
 		if ($(document).scrollTop() > 120) {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><i id='backMenu' class='fa fa-chevron-left'></i> <ul style='font-size:1.5em;'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul style='font-size:1.5em;'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -82,7 +82,7 @@ $(function(){
 		}
 		else {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 id='title'><i id='backMenu' class='fa fa-chevron-left'></i> <ul><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -96,7 +96,14 @@ $(function(){
 		console.log('recieved the menu click event!');
 		if($("#title").text()=="GALAXY") {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 id='title'><i id='backMenu' style='top:0' class='fa fa-chevron-left'></i> <ul style='top:0'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 id='title'><ul style='top:0'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+		}
+		else {
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 id='title'>GALAXY</h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -109,7 +116,7 @@ $(function(){
 			// small font
 			console.log('recieved the backMenu click event, and the scroll is more than 120px!');
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><div id='altMenu'><i class='fa fa-chevron-right'></i></div> GALAXY</h2>").hide();
+				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><div id='altMenu'><i class='fa fa-angle-right'></i></div> GALAXY</h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
