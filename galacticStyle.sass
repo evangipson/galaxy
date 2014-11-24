@@ -1,0 +1,215 @@
+$fontStack: 'Source Sans Pro', sans-serif
+$normalFontSize: 1em
+$largeMedFont: 1.3em
+$primaryColor: #2196F3
+$animTime: 0.3s
+
+body
+	margin: 0 
+	padding: 0
+	font-family: $fontStack
+	font-size: $normalFontSize
+	color: black
+a 
+	display: block
+	text-decoration: none
+	color: black
+p
+	font-size: $largeMedFont
+	font-weight: 300
+	padding: 10px
+h3
+	margin: 0
+	color: #2196F3
+	text-transform: uppercase
+	padding-left: 50px
+	font-size: 1.8em
+	font-weight: 300
+small
+	display: block
+	font-size: 13px
+	letter-spacing: 4px
+	position: relative
+	top: 10px
+	font-weight: 600
+	text-transform: uppercase
+.abs 
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+.buff 
+	position: relative
+	padding-top: 120px
+#header
+	background: $primaryColor
+	height: 300px
+	padding-left: 15%
+	padding-right: 15%
+	transition: background-color $animTime ease
+	h2
+		font-size: 3.2em
+		letter-spacing: 0.1em
+		font-weight: 200
+		text-transform: uppercase
+		color: white
+		padding: 0
+		margin: 0
+		padding-top: 120px
+	#menu 
+		text-align: center
+		cursor: pointer
+		display: block
+		line-height: 20px
+		color: white
+		background: $primaryColor
+		border-radius: 50%
+		position: relative
+		float: right
+		width: 35px
+		height: 35px
+		right: 0
+		top: 97px
+		transition: all $animTime ease
+		&:hover 
+			background: $primaryColor
+			color: white
+			-webkit-transform: rotate(360deg)
+			transform: rotate(360deg)	
+	.fa-bars
+		line-height: 2.2	
+	#altMenu
+		transition: all $animTime ease
+		font-size: 0.8em
+		padding-right: 12px
+		top: -1px
+		&:hover
+			padding-right: 24px
+			cursor: pointer
+			
+.data
+	padding: 4% 8%
+	margin-left: 4%
+	margin-right: 4%
+	margin-top: 4%
+	transition: box-shadow $animTime ease
+	&:hover 
+		cursor: pointer
+	h2
+		font-size: 2.0em
+		letter-spacing: 0.05em
+		font-weight: 300
+		text-transform: uppercase
+		color: $primaryColor
+		padding-top: 0px
+		padding-bottom: 20px
+		margin: 0
+		transition: all $animTime ease
+#close 
+	text-align: center
+	cursor: pointer
+	display: block
+	line-height: 20px
+	color: white
+	background: $primaryColor
+	border-radius: 50%
+	position: relative
+	top: 50%
+	float: right
+	width: 35px
+	height: 35px
+	margin: 17px
+	margin-top: -12px
+	left: 35px
+	transition: all $animTime ease
+	&:hover 
+		-webkit-transform: rotate(360deg)
+		transform: rotate(360deg)
+
+
+#card 
+	background: white
+	display: none
+	position: fixed
+	left: 50%
+	margin-left: -225px
+	top: 20%
+	height: 350px
+	width: 450px
+	p 
+		font-size: 1.0em
+		font-weight: 200
+		padding-left: 50px
+		
+.fa-close
+	line-height: 2.2
+	
+.colorblock
+	height: 15px
+	width: 100%
+	display: inline-block
+	float: left
+	z-index: 5
+	&:hover 
+		cursor: pointer
+	
+input[type=submit]
+	text-align: center
+	position: relative
+	border-radius: 0px
+	border: 1px solid darkgray
+	background: #efefef
+	width: 250px
+	height: 40px
+	margin: 20px
+	&:hover 
+		border: 2px inset
+		cursor: pointer
+::-webkit-input-placeholder
+	text-align: center
+	position: relative
+	font-size: 1.2em
+	font-weight: 300
+	height: 40px
+::-moz-placeholder
+	color: red
+::-ms-input-placeholder
+	color: red 
+.shadow-0 
+	border: 1px solid #eee
+.shadow-1 
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+.shadow-2 
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2)
+.shadow-3 
+	box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24)
+.shadow-4 
+	box-shadow: 0 25px 55px 0 rgba(0, 0, 0, 0.21), 0 16px 28px 0 rgba(0, 0, 0, 0.22)
+.shadow-5 
+	box-shadow: 0 40px 77px 0 rgba(0, 0, 0, 0.22), 0 27px 24px 0 rgba(0, 0, 0, 0.2)
+.bottom 
+	margin-bottom: 5%
+		
+@media only screen and (max-width: 800px)
+	#header 
+		margin-bottom: 20px
+		h2 
+			font-size: 2.8em
+			letter-spacing: 0.1em
+			font-weight: 300
+			padding-left: 5%
+			padding-right: 5%
+			padding-top: 120px
+			margin: 0
+		#menu
+			display: none
+	#data 
+		padding-left: 5%
+		padding-right: 5%
+	#card 
+		top: 15%
+		width: 80%
+		height: 70%
+		left: 10%
+		margin-left: 0px
+	
