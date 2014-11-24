@@ -37,7 +37,7 @@ $(function(){
 					$('#header').stop().animate({
 						height:'100px'
 					},0);
-					$( "#title" ).replaceWith( "<h2 id='title'><i id='altMenu' class='fa fa-chevron-right'></i> GALAXY</h2>" );
+					$( "#title" ).replaceWith( "<h2 id='title'><div id='altMenu'><i class='fa fa-chevron-right'></i></div> GALAXY</h2>" );
 					$('#header').find('h2').stop().animate({
 						fontSize: '1.5em',
 						paddingTop: '30px'
@@ -69,8 +69,61 @@ $(function(){
 		});
 	}
 	// alternate menu
-	$(".altMenu").click(function() {
+	$("#header").on('click', '#altMenu', function() {
+		console.log('recieved the altMenu click event!');
 		// replace the h2 tag!
+		if ($(document).scrollTop() > 120) {
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><i id='backMenu' class='fa fa-chevron-left'></i> <ul style='font-size:1.5em;'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+			$(this).css("padding-top","0px");
+		}
+		else {
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 id='title'><i id='backMenu' class='fa fa-chevron-left'></i> <ul><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+			$(this).css("padding-top","120px");
+		}
+	});
+	// alternate menu
+	$("#menu").click(function() {
+		// replace the h2 tag!
+		// big font
+		console.log('recieved the menu click event!');
+		if($("#title").text()=="GALAXY") {
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 id='title'><i id='backMenu' style='top:0' class='fa fa-chevron-left'></i> <ul style='top:0'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+		}
+	});
+	// back from alternate menu
+	$("#header").on('click', '#backMenu', function() {
+		// replace the h2 tag!
+		if ($(document).scrollTop() > 120) {
+			// small font
+			console.log('recieved the backMenu click event, and the scroll is more than 120px!');
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><div id='altMenu'><i class='fa fa-chevron-right'></i></div> GALAXY</h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+			$(this).css("padding-top","0px");
+		}
+		else {
+			// big font
+			console.log('recieved the backMenu click event, and your scroll is near the top!');
+			$('#title').fadeOut("fast", function(){
+				var div = $("<h2 id='title'>GALAXY</h2>").hide();
+				$(this).replaceWith(div);
+				$('#title').fadeIn("fast");
+			});
+		}
 	});
 	// hover shadows
 	$( ".data" ).hover(function() {
@@ -88,10 +141,10 @@ $(function(){
 		// if there is one.
 		$(this).removeClass('shadow-3');
 		// make the card show up
-		$("#card").show("fast", function() {
+		$("#card").fadeIn("fast", function() {
 			$("#close").show("fast", function() {
 				$( "#close" ).click( function() { 
-					$("#card").hide("fast");
+					$("#card").fadeOut("fast");
 				});
 			});
 		});

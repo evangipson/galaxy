@@ -77,16 +77,50 @@ small {
       color: white;
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg); }
-  #header .fa-bars {
-    line-height: 2.2; }
+    #header #menu i {
+      line-height: 2.2; }
   #header #altMenu {
     transition: all 0.3s ease;
     font-size: 0.8em;
+    display: inline;
+    width: 35px;
+    height: 35px;
     padding-right: 12px;
     top: -1px; }
     #header #altMenu:hover {
       padding-right: 24px;
       cursor: pointer; }
+  #header #backMenu {
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    padding-right: 12px;
+    top: -10px;
+    position: relative; }
+    #header #backMenu:hover {
+      padding-right: 24px;
+      cursor: pointer; }
+  #header ul {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -10px;
+    width: 100%;
+    padding-left: 5px; }
+    #header ul li {
+      display: inline-block;
+      margin-right: 25px;
+      padding: 15px;
+      padding-bottom: 0;
+      padding-top: 0;
+      position: relative;
+      top: 0px;
+      font-size: 0.8em;
+      transition: all 0.3s ease; }
+      #header ul li:hover {
+        top: -10px;
+        cursor: pointer; }
 
 .data {
   padding: 4% 8%;

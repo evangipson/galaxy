@@ -30,7 +30,7 @@
 		?>
         <div id="header" data-size="big">    
             <h2 id="title">GALAXY</h2>
-            <div id="menu" class="shadow-0"> <i class="fa fa-bars"></i></div>
+            <div id="menu" class="shadow-0"> <i class="fa fa-plus"></i></div>
         </div>
 		<div class="main">
 			<div class="data shadow-1">
