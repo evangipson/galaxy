@@ -19,7 +19,7 @@ $(function(){
 			fontSize: '1.5em',
 			paddingTop: '30px'
 		},0);
-		$( "#title" ).replaceWith( "<h2 id='title'>GALAXY</h2>" );
+		$( "#title" ).replaceWith( "<h2 id='title'><div id='altMenu'><i class='fa fa-angle-right'></i></div> GALAXY</h2>" );
 	}
 	// we are BIGGER than 800 pixies
 	else {
@@ -68,13 +68,15 @@ $(function(){
 			}
 		});
 	}
-	// alternate menu
+	// ================
+	// menu contents!!!
+	// ================
 	$("#header").on('click', '#altMenu', function() {
 		console.log('recieved the altMenu click event!');
 		// replace the h2 tag!
-		if ($(document).scrollTop() > 120) {
+		if ($(document).scrollTop() > 120 || windowsize < 800) {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul style='font-size:1.5em;'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 style='padding-top:30px;font-size:1.5em' id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul style='font-size:1.5em;'><li>page 1</li><li>page 2</li><li>page 3</li></ul></h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -82,7 +84,7 @@ $(function(){
 		}
 		else {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 id='title'><i id='backMenu' class='fa fa-angle-left'></i> <ul style='font-size:1.5em;'><li>page 1</li><li>page 2</li><li>page 3</li></ul></h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -96,7 +98,7 @@ $(function(){
 		console.log('recieved the menu click event!');
 		if($("#title").text()=="GALAXY") {
 			$('#title').fadeOut("fast", function(){
-				var div = $("<h2 id='title'><ul style='top:0'><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li><li><i class='fa fa-arrow-circle-up'></i></li></ul></h2>").hide();
+				var div = $("<h2 id='title'><ul style='top:0'><li>page 1</li><li>page 2</li><li>page 3</li></ul></h2>").hide();
 				$(this).replaceWith(div);
 				$('#title').fadeIn("fast");
 			});
@@ -112,7 +114,7 @@ $(function(){
 	// back from alternate menu
 	$("#header").on('click', '#backMenu', function() {
 		// replace the h2 tag!
-		if ($(document).scrollTop() > 120) {
+		if ($(document).scrollTop() > 120 || windowsize < 800) {
 			// small font
 			console.log('recieved the backMenu click event, and the scroll is more than 120px!');
 			$('#title').fadeOut("fast", function(){
